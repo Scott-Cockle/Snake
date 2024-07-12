@@ -1,0 +1,50 @@
+html, body {
+    font-family: monospace;
+}
+
+.snake {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.row {
+    display: flex;
+}
+
+input {
+    margin: 1px;
+    width: 60px;
+    height: 60px;
+    appearance: none;
+    background-color: rgb(200, 247, 81);
+    border: 2px solid black;
+}
+
+input.snake-part {
+    background-color: black;
+    position: relative;
+    z-index: 1;
+}
+
+input.apple {
+    background-image: url(/images/apple2.png);
+    background-size: cover;
+    border: 2px solid black;
+    box-sizing: border-box;
+}
+
+input.wave {
+    animation: wave 0.4s cubic-bezier(.17, .67, .83, .67);
+}
+
+h1 {
+    font-size: 3em;
+    text-align: center;
+}
+
+.row:nth-child(even) input:nth-child(even):not(.snake-part),
+.row:nth-child(odd) input:nth-child(odd):not(.snake-part) {
+    background-color: rgb(160, 214, 34);
+}
